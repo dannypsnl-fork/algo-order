@@ -1,3 +1,3 @@
-algo-order
-==========
-README text here.
+# algo-order
+
+Calculating algorithm-order sucks, let's automate it.
