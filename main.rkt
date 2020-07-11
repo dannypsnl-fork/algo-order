@@ -10,7 +10,7 @@
 (define (f n) (expt n 2))
 
 (solve
- (begin (assert(>= N 0))
+ (begin (assert (>= N 0))
         (assert (positive? C))
         (assert (< (g N)
                    (* C (f N))))))
