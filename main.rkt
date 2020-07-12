@@ -9,8 +9,11 @@
 ;;; n^2
 (define (f n) (expt n 2))
 
-(solve
- (begin (assert (>= N 0))
-        (assert (positive? C))
-        (assert (< (g N)
-                   (* C (f N))))))
+(define (big-O f g)
+  (solve
+   (begin (assert (>= N 0))
+          (assert (positive? C))
+          (assert (< (g N)
+                     (* C (f N)))))))
+
+(big-O f g)
