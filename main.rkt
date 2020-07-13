@@ -15,5 +15,22 @@
           (assert (positive? C))
           (assert (< (g N)
                      (* C (f N)))))))
+(define (Ω f g)
+  (solve
+   (begin (assert (>= N 0))
+          (assert (positive? C))
+          (assert (> (g N)
+                     (* C (f N)))))))
+(define (θ f g)
+  (solve
+   (begin (assert (>= N 0))
+          (assert (positive? C))
+          (assert (< (g N)
+                     (* C (f N))))
+          (assert (> (g N)
+                     (* C (f N)))))))
 
 (big-O f g)
+(big-O g f)
+(Ω f g)
+(θ f g)
