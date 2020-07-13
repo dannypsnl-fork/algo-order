@@ -1,7 +1,7 @@
 #lang rosette/safe
 
-(define-symbolic C integer?)
-(define-symbolic N integer?)
+(define-symbolic C C1 integer?)
+(define-symbolic N N1 integer?)
 
 ;;; n^2 + 20n
 (define (g n) (+ (expt n 2)
@@ -24,11 +24,13 @@
 (define (θ f g)
   (solve
    (begin (assert (>= N 0))
+          (assert (>= N1 0))
           (assert (positive? C))
+          (assert (positive? C1))
           (assert (< (g N)
                      (* C (f N))))
-          (assert (> (g N)
-                     (* C (f N)))))))
+          (assert (> (g N1)
+                     (* C1 (f N1)))))))
 
 (big-O f g)
 (big-O g f)
