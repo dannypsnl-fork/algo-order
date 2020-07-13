@@ -9,7 +9,7 @@
 ;;; n^2
 (define (f n) (expt n 2))
 
-(define (big-O f g)
+(define (O f g)
   (solve
    (begin (assert (>= N 0))
           (assert (positive? C))
@@ -32,7 +32,6 @@
           (assert (> (g N1)
                      (* C1 (f N1)))))))
 
-(big-O f g)
-(big-O g f)
+(O f g)
 (Ω f g)
 (θ f g)
